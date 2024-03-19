@@ -1,0 +1,170 @@
+#skill{
+  background: linear-gradient(160deg, #000, #434343);
+}
+#skill .wrap{
+  
+  color: white;
+  box-sizing: border-box;
+  padding-top: 150px;
+  height: 100%;
+}
+#skill .wrap>span{
+  display: block;
+  transform: translateX(160px) translateY(20px);
+}
+#skill .wrap h2{  
+  text-align: initial;
+  position: relative;
+
+}
+section h2{ 
+  font-weight: 500;
+}
+#skill .wrap h2::after{
+  content: "";
+  display: block;
+  width: 300px;
+  height: 300px;
+  background-image: url(../img/running.png);
+  background-size: contain;
+  position: absolute;
+  top: 100px;
+}
+#skill .wrap p{
+  margin: 10px 0;
+}
+#skill .wrap p .skill-level{
+
+}
+#skill .wrap p .skill-level span{
+
+}
+#skill .wrap h5{
+
+  padding-top: 30px;
+  line-height: 1.6;
+  color: #E9C703;
+}  
+#skill .wrap ul{
+  justify-content: center;
+  gap: 10px;
+  padding-top: 10px;
+  color: #FFF;
+}
+#skill .wrap ul li{
+  
+}
+#skill>p{
+
+  color: white;
+  text-align: center;
+  transform: translateX(160px);
+}
+#skill .license{
+
+}
+#skill .license div{
+  
+}
+#skill .license div>p{
+  
+  color: black;
+}
+
+/* 그래프 영역 */
+.container {
+   width: 100%;
+   text-transform: uppercase;
+   text-align: center;
+   margin-top: 100px;
+ }
+ .skill-level {
+   height: 10px;
+   margin: 15px 0px;
+   min-width: 400px;
+ }
+ .skill-level span {
+   background: linear-gradient(135deg, #9a9cff 0%, #D760FF);
+   border-radius: 2px;
+   border: 1px solid rgba(255,255,255,0.7);
+   width: 100px;
+   height: 15px;
+   display: inline-block;
+   margin: 0 1px;
+ }
+ .show-0 span:nth-child(n+1) {
+   background: white;
+ }
+ .show-1 span:nth-child(n+2) {
+   background: white;
+ }
+ .show-2 span:nth-child(n+3) {
+   background: white;
+ }
+ .show-3 span:nth-child(n+4) {
+   background: white;
+ }
+ .show-4 span:nth-child(n+5) {
+   background: white;
+ }
+ .show-5 span:nth-child(n+6) {
+   background: white;
+ }
+ .show-6 span:nth-child(n+7) {
+   background: white;
+ }
+ .show-7 span:nth-child(n+8) {
+   background: white;
+ }
+ .show-8 span:nth-child(n+9) {
+   background: white;
+ }
+ .show-9 span:nth-child(n+10) {
+   background: white;
+ }
+ .show-10 span:nth-child(n+11) {
+   background: white;
+ }
+
+ /* 자격증 팝업 */
+ .white_content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+.white_content:target {
+  opacity:1;
+  pointer-events: auto;
+}
+.white_content > div {
+  position: absolute;
+  top: -366%;
+  left: 38%;
+  width: 300px;
+  height: 360px;
+  padding: 15px;
+  border: 10px solid #E9C703;
+  background-color: white;
+  overflow: auto;	
+  text-align: center;
+  line-height: 1.6;
+  font-size: 14px;
+}
+.open{
+  color: #e9c703;
+  font-weight: bold;
+  margin: 0 3px;
+}
+.close{
+  color: red;
+  font-weight: bold;
+  margin-top: 5px;
+}

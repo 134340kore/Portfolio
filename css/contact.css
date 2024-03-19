@@ -1,0 +1,123 @@
+#contact{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   color: #FFF;
+   font-weight: 400;
+   font-size: 2em;
+   text-align: center;
+   text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.6);
+}
+#contact h1{
+   border: 10px solid;
+   padding: 70px 200px;
+   box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.6);
+   display: flex;
+   flex-direction: column;
+   line-height: 2;
+}
+#contact h1 .text{
+   display: flex;
+   width: 400px;
+   text-align: center;
+   height: 62px;
+   justify-content: center;
+}
+#contact h1 .text div{
+   font-size:0px;
+   opacity: 0;
+   margin-top:-30px;
+   position:absolute;
+}
+.text > div:nth-child(1) {
+   animation: roll 10s linear infinite 1s;
+}
+.text > div:nth-child(2) {
+   animation: roll 10s linear infinite 3s;
+}
+.text > div:nth-child(3) {
+   animation: roll 10s linear infinite 5s;
+}
+.text > div:nth-child(4) {
+   animation: roll 10s linear infinite 7s;
+}
+
+@keyframes roll {
+   0% {
+      font-size:0px;
+      opacity:0;
+      margin-top:-30px;
+   }
+   3% {
+      opacity:1;
+      transform: rotate(0deg);
+   }
+   5% {
+      font-size:inherit;
+      opacity:1;
+      margin-top:0px;
+   }
+   20% {
+      font-size:inherit;
+      opacity:1;
+      margin-top:0px;
+   }
+   27% {
+      font-size:0px;
+      opacity: 0.5;
+      margin-top:100px;
+   }
+   100% {
+      font-size:0px;
+      opacity:0;
+      margin-top:-30px;
+   }
+}
+#contact .con{
+   margin-top: 20px;
+   color: white;
+   width: 800px;
+}
+#contact .con ul{
+   display: flex;
+   gap: 140px;
+   justify-content: center;
+   margin: 0 auto;
+   margin-top: 42px;
+}
+#contact .con ul li{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   font-size: 12px;
+   width: 100%;
+   color: black;
+   transition: 1s;
+}
+#contact .con ul li:before{
+   content: "";
+   display: block;
+   width: 80px;
+   height: 80px;
+   background-size: contain;
+   margin-bottom: 10px;
+   background-repeat: no-repeat;
+}
+#contact .con ul li:nth-child(1)::before{
+   background-image: url(../img/call.png);
+}
+#contact .con ul li:nth-child(2)::before{
+   background-image: url(../img/mail.png);
+}
+#contact .con ul li:nth-child(3)::before{
+   background-image: url(../img/github.png);
+}
+#contact .con ul li a{
+   color: white;
+   transition: 1s ease-out;
+}
+#contact .con ul li:hover{
+   color: white;
+}
+ 

@@ -1,0 +1,62 @@
+/* 글자 */
+.h1{
+   font-size: 100px;
+ }
+ .h2{
+   font-size: 54px;
+ }
+ .h3{
+   font-size: 44px;
+ }
+ .h4{
+   font-size: 34px;
+ }
+ .h5{
+   font-size: 24px;
+ }
+ .h6{
+   font-size: 20px;
+ }
+ .p{
+   font-size: 14px;
+ }
+ .wrap{
+   max-width: 1440px;
+   margin: 0 auto;    /* 중앙정렬 */
+ }
+ .h100{
+  height: 100vh;
+  box-sizing: border-box;
+  min-height: 800px;
+}
+ /* flex */
+.flex{
+   display: flex;
+ }
+ .between{
+   justify-content: space-between;
+ }
+ .center{
+   justify-content: center;
+ }
+ .align-center{
+   align-items: center;
+ }
+ .column{
+   flex-direction: column;
+ }
+ .flex-wrap{
+   flex-wrap: wrap;
+ }
+ /* 블럭,인라인 */
+.block{
+   display: block;
+ }
+ /* 글자 정렬 */
+ .text-center{
+   text-align: center;
+ }
+ /* 안보이게 */
+.hide{
+   display: none;
+ }

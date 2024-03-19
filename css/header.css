@@ -1,0 +1,53 @@
+body{
+  background-color: #000;
+  overflow-x: hidden;
+}
+header{
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+header .wrap{
+  margin-top: 20px;
+  box-sizing: border-box;
+  height: 80px;
+  animation-name: op;
+  animation-delay: 1.5s;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  max-width: 1660px;
+  width: 1440px;
+  background-color: rgba(0,0,0,0.3);
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+@keyframes op{
+  100%{
+   opacity: 1; 
+  }
+  0%{
+  opacity: 0;    
+  }
+}
+header .wrap h1{
+
+}
+header .wrap h1 a{
+  color: white;
+  font-weight: bold;
+}
+header .wrap ul{
+  gap: 40px;
+  font-size: 24px;
+}
+header .wrap ul li{
+
+}
+header .wrap ul li a{
+  color: white;
+}
+header .wrap ul li a:hover{
+  color: #e9c703;
+}

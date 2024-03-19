@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>박재희 포트폴리오</title>
+   <link rel="stylesheet" href="css/reset.css">
+   <link rel="stylesheet" href="css/common.css">
+   <link rel="stylesheet" href="css/header.css">
+   <link rel="stylesheet" href="css/title.css">
+   <link rel="stylesheet" href="css/about.css">
+   <link rel="stylesheet" href="css/skill.css">
+   <link rel="stylesheet" href="css/portfolio.css">
+   <link rel="stylesheet" href="css/contact.css">
+   <link rel="stylesheet" href="css/footer.css">
+   <script src="https://code.jquery.com/jquery-3.7.0.min.js" type="text/javascript"></script>
+   <!-- slick -->
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+   <!-- 슬릭 -->
+   <script type="text/javascript">
+    $().ready(function(){ 
+        $('.slide').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: true,
+        dots: true,
+        infinite: true,
+        speed: 600,
+        fade: true,
+        cssEase: 'linear'
+        });
+    });
+   </script> 
+   <!-- 마우스휠 -->
+   <script type="text/javascript">
+    window.onload = function () {
+        var elm = ".box";
+        $(elm).each(function (index) {
+            // 개별적으로 Wheel 이벤트 적용
+            $(this).on("mousewheel DOMMouseScroll", function (e) {
+                e.preventDefault();
+                var delta = 0;
+                if (!event) event = window.event;
+                if (event.wheelDelta) {
+                    delta = event.wheelDelta / 120;
+                    if (window.opera) delta = -delta;
+                } 
+                else if (event.detail)
+                    delta = -event.detail / 3;
+                var moveTop = $(window).scrollTop();
+                var elmSelecter = $(elm).eq(index);
+                // 마우스휠을 위에서 아래로
+                if (delta < 0) {
+                    if ($(elmSelecter).next() != undefined) {
+                        try{
+                            moveTop = $(elmSelecter).next().offset().top;
+                        }catch(e){}
+                    }
+                // 마우스휠을 아래에서 위로
+                } else {
+                    if ($(elmSelecter).prev() != undefined) {
+                        try{
+                            moveTop = $(elmSelecter).prev().offset().top;
+                        }catch(e){}
+                    }
+                }
+                    
+                // 화면 이동 0.8초(800)
+                $("html,body").stop().animate({
+                    scrollTop: moveTop + 'px'
+                }, {
+                    duration: 800, complete: function () {
+                    }
+                });
+            });
+        });
+        $("main>section").unwrap();
+        $("section").css("height","100%");
+    }
+   </script>
+   <!-- 메뉴이동 -->
+   <script type="text/javascript">
+    $(function () {
+        $("header .wrap ul li a").click(function (){
+            $("html,body").animate({scrollTop: $(this.hash).offset().top}, 800);
+        });
+    });
+   </script>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header>
+      <div class="wrap flex between align-center box">
+          <h1 class="h3"><a href="">希</a></h1>
+          <ul class="flex">
+              <li><a href="#about">ABOUT</a></li>
+              <li><a href="#skill">SKill</a></li>
+              <li><a href="#portfolio">PORTFOLIO</a></li>
+              <li><a href="#contact">CONTACT</a></li>
+          </ul>
+      </div>
+   </header>
+    <!-- 타이틀 -->
+    <section id="title" class="flex h100 box">
+        <div class="wrap flex align-center column center">
+            <hgroup>
+                <h2 class="h1 t1">Wellcome</h2>
+                <h2 class="h1 t2">MY</h2>
+                <h2 class="h1 t3">Website</h2>
+            </hgroup>
+            <span>
+                <P class="scroll">Scroll</P>
+            </span>
+        </div>
+    </section>
+    <!-- 어바웃 -->    
+    <section id="about" class="h100 box">
+        <div class="wrap">
+            <h2 class="h2">ABOUT</h2>
+            <h4 class="h5">안녕하세요 웹 퍼블리셔 박재희입니다!</h4>
+            <P>꾸준한 노력은 뭐든 해낼 수 있다는 마음으로 매일 발전시켜나가고 있습니다. 웹 퍼블리싱이랑 잘 짜여진 벌집과도 같습니다. 각각의 객체들이 모여 큰 덩어리를 만들어가고 유기적인 형태가 완성된다는 것이 매우 유사하다 생각합니다. 그렇기에 매사 신중하고, 더욱 꼼꼼히 작업할 수 있도록 노력해나가고 있습니다.</P>
+            <img src="img/about.png" alt="프로필 이미지">
+            <ul class="flex">
+                <li>#ISFJ</li>
+                <li>#신입_웹퍼블리셔</li>
+                <li>#노력파</li>
+            </ul>
+        </div>
+    </section>
+    <!-- 스킬 -->
+    <section id="skill" class="h100 box">
+        <div class="wrap container">
+            <h2 class="h2">SKill</h2>
+            <!-- 차트 -->
+            <span>
+                <P>HTML5</P>
+                <div class="skill-level show-8">
+                    <span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+                </div>
+                <P>CSS3</P>
+                <div class="skill-level show-8">
+                    <span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+                </div>
+                <P>JQuery</P>
+                <div class="skill-level show-5">
+                    <span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+                </div>
+                <P>Vue</P>
+                <div class="skill-level show-4">
+                    <span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+                </div>
+                <P>Visual Studio</P>
+                <div class="skill-level show-8">
+                    <span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+                </div>
+                <P>Photoshop</P>
+                <div class="skill-level show-8">
+                    <span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+                </div>
+                <P>Illustrator</P>
+                <div class="skill-level show-7">
+                    <span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+                </div>
+                <P>Office</P>
+                <div class="skill-level show-10">
+                    <span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+                </div>
+                <h5 class="h5">Extra Skills</h5>
+                <ul class="flex">
+                    <li>젠코딩</li>
+                    <li>SASS</li>
+                    <li>웹표준</li>
+                    <li>웹접근성</li>
+                    <li>웹사이트 최적화</li>
+                </ul>
+            </span>
+        </div>
+    </section>
+    <!-- 포트폴리오 -->    
+    <section id="portfolio" class="flex h100 box">
+        <div class="wrap flex column">
+            <h2 class="h2">PORTFOLIO</h2>
+            <div class="slideimg slide">
+                <a href="https://134340kore.github.io/pf1-accuniq/" target="_blank"><img src="img/po1.png" alt="아큐닉"></a>
+                <a href="https://134340kore.github.io/pf2-lpoint/" target="_blank"><img src="img/po2.png" alt="L포인트"></a>
+                <a href="https://134340kore.github.io/pf3-hbpaper/" target="_blank"><img src="img/po3.png" alt="HB페이퍼"></a>
+                <a href="https://134340kore.github.io/pf4-hbpaper-R/" target="_blank"><img src="img/po4.png" alt="HB페이퍼 리뉴얼"></a>
+                <a href="https://134340kore.github.io/pf5-Hitejinro/" target="_blank"><img src="img/po5.png" alt="하이트진로"></a>
+                <a href="https://134340kore.github.io/pf0-pigeon/" target="_blank"><img src="img/po6.png" alt="피죤"></a>
+                <a href="https://134340kore.github.io/pf0-yundo/" target="_blank"><img src="img/po7.png" alt="연두"></a>
+            </div>
+        </div>
+    </section>
+    <!-- 컨택 -->
+    <section id="contact" class="box">
+        <h1>Together?<br>To me! 
+            <div class="text">
+                <div>Web Publisher</div>
+                <div>Web Designers</div>
+                <div>Someone who wants me</div>
+                <div>EVERYONE!</div>
+            </div>
+        </h1>
+        <div class="con">
+            <ul>
+                <li>010-7795-9646</li>
+                <li>jahi9645@gmail.com</li>
+                <li>https://github.com/134340kore</a></li>
+            </ul>
+        </div>
+    </section>
+    <!-- 하단 -->
+    <footer>
+        <div class="flex center">
+            <ul class="flex align-center">
+                <li>
+                    <p class="p">Thanks for visiting my Website.</p>
+                </li>
+            </ul>       
+        </div>
+    </footer>
+</body>
+</html>

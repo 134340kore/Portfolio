@@ -1,0 +1,90 @@
+section#title{
+  background-image: url(../img/main.jpg);
+}
+section#title:before{
+  content: "";
+  color: rgba(255, 255, 255, 1);
+}
+section#title .wrap{
+  min-width: 1440px;
+  line-height: 1.3;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+section#title .wrap h2{
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-direction: reverse;  
+}
+@keyframes slideL{
+  0%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-300%);
+  }
+}
+@keyframes slideR{
+  0%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(700%);
+  }
+}
+section#title .wrap hgroup{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  text-shadow: -1px 0px white, 0px 1px white, 1px 0px white, 0px -1px white;
+}
+section#title .wrap hgroup h2.t1{
+  animation-name: slideL;
+}
+
+section#title .wrap hgroup h2.t2{
+  animation-name: slideR;
+}
+section#title .wrap hgroup h2.t3{
+  animation-name: slideL;
+  margin-bottom: 30px;
+}
+section#title .wrap span{
+  position: absolute;
+  left: 50%;
+  color: white;
+  animation-name: scroll;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  bottom: 100px;
+  animation-delay: 1.5s;
+  opacity: 0;
+  transition: all 2s ease-in;
+}
+@keyframes scroll {
+   0%{
+     transform: translateY(30%);
+     opacity: 1;
+   }
+   100%{
+     transform: translateY(0%);
+     opacity: 1;
+   }
+ }
+section#title .wrap span p{
+   display: flex;
+   flex-direction: column-reverse;
+   gap: 10px;
+}
+section#title .wrap span p:before{
+   content: "";
+   background-image: url(../img/icon_scroll.png);
+   width: 19px;
+   height: 46px;
+   display: block;
+   margin: 0 auto;
+ }
